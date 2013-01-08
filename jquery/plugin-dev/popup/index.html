@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Popup Plugin Jquery</title>
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="popup.jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#popup1').popup();
+		$('#popup2').popup({title:'Title1'});
+		$('#popup3').popup({title:'Title2'});
+		
+		$('button').click(function(e) {
+			var popupid = this.getAttribute('popup');
+			$('#'+popupid).openPopup();
+		});
+	});
+</script>
+</head>
+<body>
+	<button popup="popup1">Open Popup1</button>
+	<button popup="popup2">Open Popup2</button>
+	<button popup="popup3">Open Popup3</button>
+	
+	<div id="popup1"></div>
+	<div id="popup2"></div>
+	<div id="popup3"></div>
+	
+</body>
+</html>
